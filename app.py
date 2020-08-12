@@ -5,8 +5,8 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
-# db_client = pymongo.MongoClient('mongo', 27017)  # for running in Docker
-db_client = pymongo.MongoClient('mongodb://localhost:27017/')  # for running in PyCharm
+db_client = pymongo.MongoClient('mongo', 27017)  # for running in Docker
+# db_client = pymongo.MongoClient('mongodb://localhost:27017/')  # for running in PyCharm
 
 db = db_client["AWS"]
 coll = db["VPCs"]
@@ -100,4 +100,4 @@ def api():
 
 
 if __name__ == "__main__":
-	app.run(host='0.0.0.0', debug=True)
+	app.run(host='0.0.0.0', debug=False)
